@@ -6,4 +6,4 @@ module Lib
 import Graphics.Gloss
 
 someFunc :: IO ()
-someFunc = display (InWindow "Nice Window" (200, 200) (10, 15)) white (Circle 80)
+someFunc = display (InWindow "Nice Window" (200, 200) (100, 150)) white (Circle 80)
