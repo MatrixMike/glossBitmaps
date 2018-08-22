@@ -1,6 +1,7 @@
 {-# OPTIONS_GHC -fwarn-missing-signatures #-}
 module Lib
     ( someFunc
+    , someFunc2
     ) where
 
 import Graphics.Gloss
@@ -20,3 +21,5 @@ ourPicture = bitmapOfByteString 100 100 (BitmapFormat TopToBottom PxRGBA) bitmap
 someFunc :: IO ()
 someFunc = display (InWindow "Nice Window 2" (200, 200) (10, 10)) white ourPicture
 
+someFunc2 :: IO ()
+someFunc2 = display (InWindow "Nice Window 2" (200, 200) (10, 10)) white (Circle 80)
