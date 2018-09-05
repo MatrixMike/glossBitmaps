@@ -1,0 +1,36 @@
+on white Tower:
+
+mikeh@mikeh-Dell-DM051 ~/glossBitmaps $ stack build
+
+Error: While constructing the build plan, the following exceptions were encountered:
+
+In the dependencies for glossBitmaps-0.1.0.0:
+    base-4.11.1.0 from stack configuration does not match >=4.8 && <4.9  (latest matching version is 4.8.2.0)
+    gloss-1.12.0.0 from stack configuration does not match >=1.13 && <1.14  (latest matching version is 1.13.0.1)
+needed since glossBitmaps is a build target.
+
+Some different approaches to resolving this:
+
+  * Set 'allow-newer: true' to ignore all version constraints and build anyway.
+
+  * Consider trying 'stack solver', which uses the cabal-install solver to attempt to find some working build
+    configuration. This can be convenient when dealing with many complicated constraint errors, but results may be
+    unpredictable.
+
+  * Recommended action: try adding the following to your extra-deps in /home/mikeh/glossBitmaps/stack.yaml:
+
+- base-4.8.2.0
+- gloss-1.13.0.1
+
+Plan construction failed.
+mikeh@mikeh-Dell-DM051 ~/glossBitmaps $ 
+mikeh@mikeh-Dell-DM051 ~/glossBitmaps $ uname -a
+Linux mikeh-Dell-DM051 4.4.0-21-generic #37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+mikeh@mikeh-Dell-DM051 ~/glossBitmaps $ lsb_release -a
+No LSB modules are available.
+Distributor ID:	LinuxMint
+Description:	Linux Mint 18 Sarah
+Release:	18
+Codename:	sarah
+mikeh@mikeh-Dell-DM051 ~/glossBitmaps $ 
+
